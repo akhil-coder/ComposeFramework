@@ -10,5 +10,5 @@ plugins {
     id ("com.android.application") version buildToolsVersion  apply false
     id ("com.android.library") version buildToolsVersion apply false
     id ("org.jetbrains.kotlin.android") version kotlinVersion apply false
-    id("org.jetbrains.kotlin.jvm") version "1.8.0" apply false
+    id("org.jetbrains.kotlin.jvm") version kotlinVersion apply false
 }
