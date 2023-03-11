@@ -1,6 +1,8 @@
 plugins {
-    id ("com.android.application")
-    id ("org.jetbrains.kotlin.android")
+    id("com.android.application")
+    id("com.google.dagger.hilt.android")
+    kotlin("android")
+    kotlin("kapt")
 }
 
 android {
@@ -45,9 +47,21 @@ android {
 }
 
 dependencies {
+
+    implementation(project(Modules.core))
+    implementation(project(Modules.heroDomain))
+    implementation(project(Modules.heroInteractors))
+    implementation(project(Modules.ui_heroList))
+    implementation(project(Modules.ui_heroDetail))
+
     implementation(AndroidX.coreKtx)
     implementation(AndroidX.appCompat)
     implementation(AndroidX.lifecycleVmKtx)
+
+    implementation(Coil.coil)
+
+    implementation(Hilt.android)
+    kapt(Hilt.compiler)
 
     implementation(Compose.activity)
     implementation(Compose.ui)
@@ -55,6 +69,10 @@ dependencies {
     implementation(Compose.tooling)
     implementation(Compose.navigation)
     implementation(Compose.hiltNavigation)
+
+    implementation(Google.material)
+
+    implementation(SqlDelight.androidDriver)
 
 //    testImplementation 'junit:junit:4.13.2'
 //    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
